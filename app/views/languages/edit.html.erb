@@ -1,1 +1,10 @@
-edit.html.erb
+<h1>Edit Language</h1>
+
+	<% if @language.errors.any? %>
+		<h3>Please fix these errors</h3>
+		<ul>
+			<% @language.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>			
