@@ -1,5 +1,16 @@
 <h1> New Language </h1>
 
+
+	<% if @language.errors.any? %>
+		<h3> Oops an error occured. Please try again:</h3>
+		<ul>
+			<% @language.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>		
+
+
 	<%= form_for @language do |f| %>
 		<%= f.label :name %>
 		<%= f.text_field :name %>
