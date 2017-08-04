@@ -5,7 +5,7 @@ class LanguagesController < ApplicationController
 	end
 
 	def show
-		@languages = Language.find(params[:id])
+		@language = Language.find(params[:id])
 		render :show
 	end
 end		
