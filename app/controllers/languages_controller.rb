@@ -23,6 +23,11 @@ class LanguagesController < ApplicationController
 		end
 	end
 
+	def edit
+		@language = Language.find(params[:id])
+		render :edit
+	end	
+
 	private
 		def language_params
 			params.require(:language).permit(:name)	
