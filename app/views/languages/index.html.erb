@@ -5,4 +5,8 @@
 	<% @languages.each do |language| %>
 		<li><%= link_to language.name, language_path(language) %></li>
 	<% end %>
-</ul>		
+</ul>	
+
+<hr>
+
+<%= link_to "New language", new_language_path %>	
