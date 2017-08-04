@@ -1,1 +1,8 @@
-new.html.erb
+<h1> New Language </h1>
+
+	<%= form_for @language do |f| %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<%= f.submit  %>
+		
+	<% end %>
