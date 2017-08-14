@@ -1,4 +1,27 @@
 <h1><%= @language.name %></h1>
 
+ <% if @language.projects.any? %>
+    <h4>Here are the projects for this language:</h4>
+
+    <ul>
+      <% @language.projects.each do |project| %>
+        <li>
+          <%= project.description %> |
+          <%= link_to "Edit", edit_language_project_path(@language, project) %> |
+          <%= link_to "Delete", language_project_path(@language, project),
+                                   :data => {:confirm => "Are you sure?",
+                                                  :method => "delete"} %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no projects yet!</p>
+  <% end %>
+
+  <p><%= link_to "Add a project", new_language_project_path(@language) %></p>
+  <p><%= link_to "Delete language", language_path(@language),
+                          :data => {:confirm => "Are you sure?",
+                                         :method => "delete"} %></p>
+
 
 	<p><%= link_to "Return to Languages", languages_path %></p>
