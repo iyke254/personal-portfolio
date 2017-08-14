@@ -17,19 +17,10 @@
 //= require jquery
 //= require bootstrap-sprockets
 
-$("#toggle").click( function(event){
-    event.preventDefault();
-    if ($(this).hasClass("isDown") ) {
-        $( ".navbar-fixed-top" ).animate({ "margin-top": "-62px" }, "fast" );  
-        $( "#content" ).animate({ "margin-top": "5px" }, "fast" );
-        $(this).removeClass("isDown");
-    } else {
-        $( ".navbar-fixed-top" ).animate({ "margin-top": "0px" }, "fast" );
-        $( "#content" ).animate({ "margin-top": "80px" }, "fast" );
-        $(this).addClass("isDown");
-    }
-    return false;
+$(window).ready(function(){
+  $('.menu-toggle').click(function(){
+    //console.log(2);
+    $('.main-nav').toggleClass('main-nav-open',500);
+    $(this).toggleClass('open');
+  });
 });
-
-
-console.log('bcbcb')
