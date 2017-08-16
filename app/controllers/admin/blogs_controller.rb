@@ -43,3 +43,4 @@ class Admin::BlogsController < AdminController
 	
 	def blog_params
 		params.require(:blog).permit(:name, :content)		
+	end	
