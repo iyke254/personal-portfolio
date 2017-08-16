@@ -1,0 +1,11 @@
+<h1><%= @blog.name %></h1>
+  <p><%= @blog.content %></p>
+
+ 
+ <p><%= link_to "Edit blog", edit_blog_path %></p>
+  <p><%= link_to "Delete blog", blog_path(@blog),
+                          :data => {:confirm => "Are you sure?",
+                                         :method => "delete"} %></p>
+
+
+	<p><%= link_to "Return to Blogs", blogs_path %></p>

@@ -8,11 +8,11 @@
         <li><%= link_to "Languages", languages_path %></li>
 
 
-        <li><a href="#"><i class="fa fa-pencil nav-icon">
-        </i>Blog</a></li>
+        <li><%= link_to "Blogs", blogs_path %></li>
+        
         <li><a href="#"><i class="fa fa-envelope nav-icon"></i>Contacts</a></li>
-        <li><%= link_to "Sign-Up", new_user_registration_path %></li>
-        <li><%= link_to "Sign-Out", destroy_user_session_path%></li>
+        <li><%= link_to "Sign-Up", new_user_registration_path,method: :get %></li>
+        <li><%= link_to "Sign-Out", destroy_user_session_path, method: :delete %></li>
       </ul>
     </nav>
     
@@ -22,6 +22,8 @@
     
   </div>
 </header>
+<p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 <div class="row">
   <div class="col-md-7">
     <div class="img">
@@ -40,7 +42,7 @@
   </div>
 
 </div>
-<h3>My Portfolio</h3>
+
 <div class="container-fluid">
 
 
