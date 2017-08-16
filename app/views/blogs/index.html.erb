@@ -9,4 +9,7 @@
 
 <hr>
 
-<%= link_to "New blog", new_blog_path %>
+<% if current_user && current_user.is_admin? %>
+	<%= link_to "New blog", new_admin_blog_path %>
+<% end %>	
+
