@@ -17,10 +17,29 @@ class Admin::BlogsController < AdminController
 		if @blog.save
 			redirect_to admin_blog_path(@blog)
 		else
-			render :new, alert:"Something went wrong"
+			render :new, alert:"Something went wrong."
 		end
 	end
+
 	def edit; end
 
 	def update
-		if @blog,update(blog_params)		
+		if @blog.update(blog_params)	
+			redirect_to admin_blog_path(@blog)
+		else
+			render :edit, alert: "Something went wrong."
+		end
+	end	
+
+	def destroy
+		@blog.destroy
+		redirect_to admin_blog_path, alert: "Successfully deleted publication."			
+	end
+	
+	private
+	def find_blog
+		@blog = Blog.find(params[:id])
+	end
+	
+	def blog_params
+		params.require(:blog).permit(:name, :content)		
