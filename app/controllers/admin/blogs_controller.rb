@@ -1,5 +1,5 @@
 class Admin::BlogsController < AdminController
-	before_action :find_blog, onlyL: [:show, :edit, :update, :destroy]
+	before_action :find_blog, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@blogs = Blog.all
@@ -37,10 +37,12 @@ class Admin::BlogsController < AdminController
 	end
 	
 	private
+
 	def find_blog
 		@blog = Blog.find(params[:id])
 	end
 	
 	def blog_params
 		params.require(:blog).permit(:name, :content)		
-	end	
+	end
+end		
