@@ -5,9 +5,9 @@
   	<h4>View Comments for this post</h4>
 
   		<ul> 
-  			<% @blog.comments.each.do |comments| %>
+  			<%  @blog.comments.each do |comment| %>
   				<li>
-  					<%= @comment.description %> |
+  					<%= comment.description %> |
   					<%= link_to "Edit", edit_blog_comment_path(@blog, comment) %> |
 
   					<%= link_to "Delete", blog_comment_path(@blog, comment), method: :delete, :data => {:confirm => "Are you sure?",
@@ -27,4 +27,4 @@
                                          :method => "delete"} %></p>
 <% end %>
 
-	<p><%= link_to "Return to Blogs", blogs_path %></p>
+<p><%= link_to "Return to Blogs", blogs_path %></p>
