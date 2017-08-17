@@ -1,6 +1,18 @@
 <h1><%= @blog.name %></h1>
   <p><%= @blog.content %></p>
 
+  <% if @blog.comments.any? %>
+  	<h4>View Comments for this post</h4>
+
+  		<ul> 
+  			<% @blog.comments.each.do |comments| %>
+  				<li>
+  					<%= @comment.description %> |
+  					<%= link_to "Edit", edit_blog_comment_path(@blog, comment) %> |
+
+  					<%= link_to "Delete", blog_comment_path(@blog, comment), method: :delete, :data => {:confirm => "Are you sure?",
+                                                  :method => "delete"} %>
+
 <% if current_user && current_user.is_admin? %>
  	<p><%= link_to "Edit blog", edit_admin_blog_path %></p>
   	<p><%= link_to "Delete blog", admin_blog_path(@blog), method: :delete,
@@ -8,4 +20,4 @@
                                          :method => "delete"} %></p>
 <% end %>
 
-	<p><%= link_to "Return to Blogs", blogs_path %></p>r
+	<p><%= link_to "Return to Blogs", blogs_path %></p>
