@@ -12,6 +12,13 @@
 
   					<%= link_to "Delete", blog_comment_path(@blog, comment), method: :delete, :data => {:confirm => "Are you sure?",
                                                   :method => "delete"} %>
+                </li>
+     		<% end %>
+    	</ul>
+  <% else %>
+    <p>There are no comments yet! Add your own Here <%= link_to "Add a comment", new_blog_comment_path(@blog) %></p>
+  <% end %>
+                                  
 
 <% if current_user && current_user.is_admin? %>
  	<p><%= link_to "Edit blog", edit_admin_blog_path %></p>
