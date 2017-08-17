@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 	resources :languages do
 		resources :projects
   	end
-  	resources :blogs, only: [:index, :show]
+  	resources :blogs, only: [:index, :show] do
+  		resources :comments
+  	end	
 
   	namespace :admin do
   		resources :blogs
