@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   	end	
 
   	namespace :admin do
-  		resources :blogs
+  		resources :blogs do
+        resources :comments
+      end
   	end	
 end
