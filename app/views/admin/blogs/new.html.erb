@@ -11,7 +11,7 @@
 	<% end %>		
 
 
-	<%= form_for @blog do |f| %>
+	<%= form_for @blog, url: admin_blogs_path(@blog) do |f| %>
 		<%= f.label :name %>
 		<%= f.text_field :name %>
 		

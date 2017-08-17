@@ -15,7 +15,7 @@ class Admin::BlogsController < AdminController
 		@blog = Blog.new(blog_params)
 
 		if @blog.save
-			redirect_to admin_blog_path(@blog)
+			redirect_to blog_path(@blog)
 		else
 			render :new, alert:"Something went wrong."
 		end
@@ -33,7 +33,7 @@ class Admin::BlogsController < AdminController
 
 	def destroy
 		@blog.destroy
-		redirect_to admin_blog_path, alert: "Successfully deleted publication."			
+		redirect_to blog_path, alert: "Successfully deleted publication."			
 	end
 	
 	private
