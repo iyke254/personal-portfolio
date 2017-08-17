@@ -33,7 +33,7 @@ class Admin::BlogsController < AdminController
 
 	def destroy
 		@blog.destroy
-		redirect_to blog_path, alert: "Successfully deleted publication."			
+		redirect_to blogs_path, alert: "Successfully deleted publication."			
 	end
 	
 	private
