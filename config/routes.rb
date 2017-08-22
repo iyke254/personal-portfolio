@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   		resources :comments, only: [:index, :show, :edit]
   	end	
 
-    resources :references, only: [:index, :show] do
+    resources :references, only: [:index, :show] 
 
   	namespace :admin do
   		resources :blogs do
