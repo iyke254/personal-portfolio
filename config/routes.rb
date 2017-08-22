@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   		resources :comments, only: [:index, :show, :edit]
   	end	
 
+    resources :references, only: [:index, :show] do
+
   	namespace :admin do
   		resources :blogs do
         resources :comments
