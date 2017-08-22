@@ -1,21 +1,21 @@
-class LanguagesController < ApplicationController
+class ReferencesController < ApplicationController
 	def new
-		@reference = Language.new
+		@reference = Reference.new
 		render :new
 	end
 
 	def index
-		@references = Language.all
+		@references = Reference.all
 		render :index
 	end
 
 	def show
-		@reference = Language.find(params[:id])
+		@reference = Reference.find(params[:id])
 		render :show
 	end
 
 	def create
-		@reference = Language.new(reference_params)
+		@reference = Reference.new(reference_params)
 		if @reference.save
 			redirect_to references_path
 		else
@@ -24,12 +24,12 @@ class LanguagesController < ApplicationController
 	end
 
 	def edit
-		@reference = Language.find(params[:id])
+		@reference = Reference.find(params[:id])
 		render :edit
 	end
 	
 	def update
-		@reference = Language.find(params[:id])
+		@reference = Reference.find(params[:id])
 		if @reference.update(reference_params)
 			redirect_to references_path
 		else
