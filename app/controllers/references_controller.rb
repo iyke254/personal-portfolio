@@ -1,44 +1,44 @@
 class LanguagesController < ApplicationController
 	def new
-		@language = Language.new
+		@reference = Language.new
 		render :new
 	end
 
 	def index
-		@languages = Language.all
+		@references = Language.all
 		render :index
 	end
 
 	def show
-		@language = Language.find(params[:id])
+		@reference = Language.find(params[:id])
 		render :show
 	end
 
 	def create
-		@language = Language.new(language_params)
-		if @language.save
-			redirect_to languages_path
+		@reference = Language.new(reference_params)
+		if @reference.save
+			redirect_to references_path
 		else
 			render :new
 		end
 	end
 
 	def edit
-		@language = Language.find(params[:id])
+		@reference = Language.find(params[:id])
 		render :edit
 	end
 	
 	def update
-		@language = Language.find(params[:id])
-		if @language.update(language_params)
-			redirect_to languages_path
+		@reference = Language.find(params[:id])
+		if @reference.update(reference_params)
+			redirect_to references_path
 		else
 			render :edit
 		end
 	end				
 
 	private
-		def language_params
-			params.require(:language).permit(:name)	
+		def reference_params
+			params.require(:reference).permit(:name)	
 		end			
 end		
