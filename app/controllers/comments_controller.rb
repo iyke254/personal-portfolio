@@ -15,6 +15,14 @@ class CommentsController < ApplicationController
     	end
     end
 
+
+    def edit
+        @blog = Blog.find(params[:blog_id])
+        @comment = @blig.comments.edit(comment_params)
+        
+    end
+    
+    
     private
     def comment_params
     	params.require(:comment).permit(:description)			

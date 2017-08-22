@@ -12,7 +12,7 @@
                 </li>
                 <%= link_to "Edit", edit_blog_comment_path(@blog, comment) %> 
 
-  					<%= link_to "Delete", blog_comment_path(@blog, comment), method: :delete, :data => {:confirm => "Are you sure?",
+  				<%= link_to "Delete", blog_comment_path(@blog, comment), method: :delete, :data => {:confirm => "Are you sure?",
                                                   :method => "delete"} %>
      		<% end %>
     	</ul>

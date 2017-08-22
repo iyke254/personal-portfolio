@@ -1,53 +1,155 @@
-<header>
-  <div class="wrapper">
-    <h1 class="logo">Isaac Nderi Onyango</h1>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#"><i class="fa fa-home nav-icon"></i>Home</a></li>
+<div class="wrapper">
+  <header role="header">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+            <span class="sr-only">Toggle Navigation</span>
+            
+            <span class="icon-bar"></span>
+            
+            <span class="icon-bar"></span>
+            
+            <span class="icon-bar"></span>
+          </button>
 
-        <li><%= link_to "Languages", languages_path %></li>
+          <a href="#" class="navbar-brand">Isaac N. Onyango</a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right js-nav">
+            <li><a href="#home">Home</a></li>
+            
+            <li><%= link_to "Languages", languages_path %></li>
 
 
-        <li><%= link_to "Blogs", blogs_path %></li>
-        
-        <li><a href="#"><i class="fa fa-envelope nav-icon"></i>Contacts</a></li>
-        <li><%= link_to "Sign-In", new_user_session_path,method: :get %></li>
-        <li><%= link_to "Sign-Out", destroy_user_session_path, method: :delete %></li>
-      </ul>
+            <li><%= link_to "Blog", blogs_path %></li>
+            
+             
+             
+
+
+            <% if user_signed_in? %>
+              <li><%= link_to "Sign-Out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign-In", new_user_session_path,method: :get %></li>
+            <% end %>  
+
+            <li><a href="#home">References</a></li 
+
+          </ul>
+        </div>
+      </div>
     </nav>
-    
-    <div class="menu-toggle">
-      <div class="hamburger"></div>
+  </header>
+
+  <section id="home" class="sec-main">
+    <h1 class="main-heading">Where creativity happens.</h1>
+  </section>
+
+  <section id="about" class="sec-about">
+    <div class="container">
+      <h1>About me</h1>
+
+      <hr />
+
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <p>Hi, my name is Isaac Nderi Onyango and I am a Full Stack Web Developer based in Nairobi. I love creating beautiful and responsive web programs in HTML5, JavaScript or Ruby on Rails. My other skills include WordPress and Photoshop. 
+            If you want to hire me or just to talk, <a class="js-connect" href="#footer">connect</a> with me.</p>
+        </div>
+      </div>
     </div>
-    
-  </div>
-</header>
+  </section>
+  <section id="services" class="sec-services">
+    <div class="container">
+      <h1>Services</h1>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+      <hr />
+
+      <div class="row">
+        <div class="col-sm-4">
+          <i class="fa fa-4x fa-file"></i>
+
+          <h2 class="h3">Beautiful Design</h2>
+
+          <p>Every website is beautiful, unique and tailored to suit your needs and requirements.</p>
+        </div>
+
+        <div class="col-sm-4">
+          <i class="fa fa-4x fa-code"></i>
+
+          <h2 class="h3">Clean Code</h2>
+
+          <p>All websites are written in valid and clean code.</p>
+        </div>
+
+        <div class="col-sm-4">
+          <i class="fa fa-4x fa-tablet"></i>
+
+          <h2 class="h3">Always Responsive</h2>
+
+          <p>All websites are responsive. They will look great on desktop, tablets and mobile phones too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-<div class="row">
-  <div class="col-md-6">
-    <div class="img">
-      <%= image_tag "iyke.jpg" %>
-   </div>
-  </div>
-  <div class="me col-md-6">
-    <h4>About Me</h4>
-   <p>I am a Full stack Web Developer</p>
 
-   <p>An Amateur Photographer</p>
+  <section id="contact" class="sec-contact">
+    <div class="container">
+      <h1>Contact Me</h1>
 
-   <p>Also a lover of life</p>
+      <hr />
 
-   Take a look at some of my projects <%= link_to "Languages", languages_path %>
-  </div>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+        <form method="post" action="mailto:nderiony95@youremail.com" >
+          <form class="center-block" action="#" method="post">
+            <div class="form-group">
+              <label class="sr-only" for="inputName">Full name</label>
 
+              <input id="inputName" class="form-control" type="text" placeholder="Name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="inputMail" class="sr-only">Email Address</label>
+
+              <input id="inputMail" class="form-control" type="email" placeholder="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="inputMessage" class="sr-only">Your Message</label>
+
+              <textarea id="inputMessage" class="form-control" name="message" cols="30" rows="8" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-default center-block" type="submit" value="Hire me">Contact Me</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container">
+      <ul class="soc-media-ul">
+        <li>
+          <a href="https://plus.google.com/u/0/+Nderionyango" class="fa fa-google-plus" target="_blank"></a>
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/IsaacNderi" class="fa fa-facebook" target="_blank"></a>
+        </li>
+
+        <li>
+          <a href="mailto:nderiony95@gmail.com" class="fa fa-envelope"></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 </div>
 
-<div class="container-fluid">
-
-
-<p></p>
-</div>
