@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   	end	
 
     resources :references, only: [:index, :show] 
+
+    resources :users
     resources :feedbacks
 
    

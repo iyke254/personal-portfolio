@@ -1,7 +1,12 @@
 class LanguagesController < ApplicationController
+	before_action :set_user
 	def new
 		@language = Language.new
 		render :new
+	end
+
+	def content 
+		@feedbacks=Feedback.all
 	end
 
 	def index
@@ -38,7 +43,12 @@ class LanguagesController < ApplicationController
 	end				
 
 	private
+	  def set_user
+    	@user = current_user
+  	  end
 		def language_params
 			params.require(:language).permit(:name)	
-		end			
+		end	
+
+
 end		

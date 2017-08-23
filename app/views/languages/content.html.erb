@@ -95,6 +95,14 @@
     </div>
   </section>
 <section id="testimonials" class="sec-testimonials">
+  <div class="container">
+  <h1> Testimonials</h1>
+
+    <hr />
+
+    
+
+  <%if user_signed_in?%>
   <div class="feeback form">
   <%= form_for :feedback, url: feedbacks_path(current_user) do |f|%>
     <div class="form-group">
@@ -106,7 +114,18 @@
     <div class="form-group">
       <%= f.button "submit"%>
     </div>
+    <%end%>
+</div>
+  <%else%>
+
+  <h3> Please Sign In to leave a Testimonial</h3>
+<%end%>
+<div>
+  <%@feedbacks.each do |feedback|%>
+      <h1><%= feedback.name%></h1>
+        <p><%= feedback.body%></p>
   <%end%>
+</div>
 </div>
 </section>
   <section id="contact" class="sec-contact">
@@ -164,4 +183,5 @@
     </div>
   </footer>
 </div>
+
 

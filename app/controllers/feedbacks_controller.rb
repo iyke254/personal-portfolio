@@ -6,6 +6,9 @@ class FeedbacksController < ApplicationController
   def edit
   end
 
+  def new
+  end	
+
   def create
     @user = current_user
     @feedback = @user.feedbacks.new(feedback_params)
@@ -19,7 +22,7 @@ class FeedbacksController < ApplicationController
   private
 
   def feedback_params
-    params.require(:feedback).permit(:name, :body, :rating)
+    params.require(:feedback).permit(:name, :body)
   end
 
   def set_user
