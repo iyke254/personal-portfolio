@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-  before_action :set_user
+	before_action :set_user
   def index
   end
 

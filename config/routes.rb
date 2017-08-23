@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   root :to => 'languages#content'
 
   devise_for :users
@@ -10,6 +12,9 @@ Rails.application.routes.draw do
   	end	
 
     resources :references, only: [:index, :show] 
+    resources :feedbacks
+
+   
 
   	namespace :admin do
   		resources :blogs do
