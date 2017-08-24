@@ -15,13 +15,13 @@ class ProjectsController < ApplicationController
 	end	
 
 	def edit
-   		@language = List.find(params[:language_id])
+   		@language = Language.find(params[:language_id])
    		@task = @language.tasks.find(params[:id])
    
  	end
 
 	def update
-  		 @language = List.find(params[:language_id])
+  		 @language = Language.find(params[:language_id])
   		 @task = @language.tasks.find(params[:id])
    	if @task.update(task_params)
      	flash[:notice] = "Task successfully updated!"
@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
  end
 
 def destroy
-   @language = List.find(params[:language_id])
+   @language = Language.find(params[:language_id])
    @task = @language.tasks.find(params[:id])
    @task.destroy
    flash[:notice] = "Task successfully deleted!"
