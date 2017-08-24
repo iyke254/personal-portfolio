@@ -11,5 +11,6 @@
 </ul>	
 
 <hr>
-
-<%#= link_to "New language", new_language_path %>
+<% if current_user && current_user.is_admin? %>
+	<%= link_to "New language", new_language_path, remote: true %>
+<% end %>  

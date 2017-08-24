@@ -10,10 +10,13 @@
   					<%= comment.description %> 
   					
                 </li>
+                <% if current_user && current_user.is_admin? %>
                 <%= link_to "Edit", edit_blog_comment_path(@blog, comment) %> 
 
-  				<%= link_to "Delete", blog_comment_path(@blog, comment), method: :delete, :data => {:confirm => "Are you sure?",
-                                                  :method => "delete"} %>
+  				      <%= link_to "Delete", blog_comment_path(@blog, comment), method: :delete, :data => {:confirm => "Are you sure?",
+                                                 :method => "delete"} %>
+                <% end %>
+
      		<% end %>
     	</ul>
   <% else %>
