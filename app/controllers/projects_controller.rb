@@ -16,14 +16,14 @@ class ProjectsController < ApplicationController
 
 	def edit
    		@language = Language.find(params[:language_id])
-   		@task = @language.tasks.find(params[:id])
+   		@project = @language.projects.find(params[:id])
    
  	end
 
 	def update
   		 @language = Language.find(params[:language_id])
-  		 @task = @language.tasks.find(params[:id])
-   	if @task.update(task_params)
+  		 @project = @language.projects.find(params[:id])
+   	if @project.update(project_params)
      	flash[:notice] = "Project successfully updated!"
     	redirect_to language_path(@language)
     else
@@ -33,8 +33,8 @@ class ProjectsController < ApplicationController
 
 	def destroy
    		@language = Language.find(params[:language_id])
-  		@task = @language.tasks.find(params[:id])
-  		@task.destroy
+  		@project = @language.projects.find(params[:id])
+  		@project.destroy
    		flash[:notice] = "Project successfully deleted!"
    		redirect_to language_path(@language)
  	end
