@@ -1,0 +1,12 @@
+<h1>New referees</h1>
+
+<%= form_for @reference do |f| %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<hr />
+		<%= f.label :content %>
+		<%= f.text_area :name %>
+		<%= f.submit  %>
+		
+	<% end %>			

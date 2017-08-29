@@ -1,4 +1,8 @@
+<div class="container">
 <h1> Here are my Referees </h1>
+
+<hr />
+</div>
 
 
 <ul>
@@ -6,3 +10,7 @@
 		<li><%= reference.name %></li>
 	<% end %>
 </ul>		
+
+<% if current_user && current_user.is_admin? %>
+	<%= link_to "New reference", new_reference_path %>
+<% end %>  
