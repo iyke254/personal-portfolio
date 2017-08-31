@@ -16,7 +16,7 @@ class ReferencesController < ApplicationController
     if @reference.save
       redirect_to references_path
     else
-      render :new
+      
     end
   end
 
